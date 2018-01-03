@@ -1,5 +1,5 @@
-call nvmon.bat
-call auto_restart.bat
+start nvmon.bat
+start auto_restart.bat
 
 TIMEOUT /T 10
-call startzpool.bat
+start startzpool.bat
