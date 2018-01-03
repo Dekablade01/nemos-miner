@@ -1,12 +1,6 @@
 
 # Created by https://www.gitignore.io/api/osx,macos,batch,windows,powershell
 
-### Batch ###
-# BatchFiles
-*.bat
-*.cmd
-*.btm
-
 ### macOS ###
 *.DS_Store
 .AppleDouble

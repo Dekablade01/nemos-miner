@@ -1,0 +1,1 @@
+powershell -version 5.0 -noexit -executionpolicy bypass -windowstyle maximized -command "&.\NemosMiner-v2.2.2.ps1 -SelGPUEWBF '0 1 2 3 4 5' -SelGPUCC '0,1,2,3,4,5' -Currency THB -Passwordcurrency BTC -interval 120 -Wallet 39AQMrYG42wDkfiezFihJ8SFTKPFeMzXHZ -Location US -PoolName zpool -Type nvidia -Algorithm poly,phi,lbry,equihash,x17,Lyra2RE2,neoscrypt,blake2s -Donate 0
