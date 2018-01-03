@@ -1,5 +1,5 @@
-START "nvmon.bat"
-START "auto_restart.bat"
+call nvmon.bat
+call auto_restart.bat
 
 TIMEOUT /T 10
-START "startzpool.bat"
+call startzpool.bat
