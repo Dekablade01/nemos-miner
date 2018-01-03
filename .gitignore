@@ -1,3 +1,9 @@
+Bin/*
+
+Stats/*
+
+Logs/*
+
 
 # Created by https://www.gitignore.io/api/osx,macos,batch,windows,powershell
 
@@ -37,13 +43,6 @@ Temporary Items
 # Files that might appear in the root of a volume
 
 # Directories potentially created on remote AFP share
-
-### PowerShell ###
-# Exclude packaged modules
-*.zip
-
-# Exclude .NET assemblies from source
-*.dll
 
 ### Windows ###
 # Windows thumbnail cache files
