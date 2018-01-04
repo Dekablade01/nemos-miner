@@ -2,12 +2,7 @@
 
 try
 {
-    $Zpool_Request = Invoke-WebRequest "http://www.zpool.ca/api/status" -UseBasicParsing | ConvertFrom-Json
-}
-catch
-{
-    return
-}
+    $Zpool_Request = Invoke-WebRequest "http://www.zpool.ca/api/status" -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json } catch { return }
 
 if(-not $Zpool_Request){return}
 
@@ -23,12 +18,12 @@ $Zpool_Request | Get-Member -MemberType NoteProperty | Select -ExpandProperty Na
 
     $Divisor = 1000000
 	
-    switch($Zpool_Algorithm)
-    {
-        "equihash"{$Divisor /= 1000}
-        "blake2s"{$Divisor *= 1000}
-	"blakecoin"{$Divisor *= 1000}
-        "decred"{$Divisor *= 1000}
+    switch ($Zpool_Algorithm) {
+        "equihash" {$Divisor /= 1000}
+        "blake2s" {$Divisor *= 1000}
+	"blakecoin" {$Divisor *= 1000}
+        "decred" {$Divisor *= 1000}
+	"keccak" {$Divisor *= 1000}
     }
 
     if((Get-Stat -Name "$($Name)_$($Zpool_Algorithm)_Profit") -eq $null){$Stat = Set-Stat -Name "$($Name)_$($Zpool_Algorithm)_Profit" -Value ([Double]$Zpool_Request.$_.estimate_last24h/$Divisor)}

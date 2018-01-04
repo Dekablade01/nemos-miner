@@ -1,11 +1,7 @@
 ﻿. .\Include.ps1
 
 try {
-    $NiceHash_Request = Invoke-WebRequest "https://api.nicehash.com/api?method=simplemultialgo.info" -UseBasicParsing | ConvertFrom-Json
-}
-catch {
-    return
-}
+    $NiceHash_Request = Invoke-WebRequest "https://api.nicehash.com/api?method=simplemultialgo.info" -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} | ConvertFrom-Json } catch { return }
 
 if (-not $NiceHash_Request) {return}
 
@@ -19,6 +15,7 @@ $Locations | ForEach-Object {
     switch ($NiceHash_Location) {
         "eu" {$Location = "Europe"}
         "usa" {$Location = "US"}
+        "jp" {$Location = "JP"}
         default {$Location = "Asia"}
     }
     
@@ -42,7 +39,7 @@ $Locations | ForEach-Object {
                 Protocol      = "stratum+tcp"
                 Host          = $NiceHash_Host
                 Port          = $NiceHash_Port
-                User          = "$Wallet.$WorkerName"
+                User          = "$Wallet"
                 Pass          = "x"
                 Location      = $Location
                 SSL           = $false
@@ -57,7 +54,7 @@ $Locations | ForEach-Object {
                 Protocol      = "stratum+ssl"
                 Host          = $NiceHash_Host
                 Port          = $NiceHash_Port
-                User          = "$Wallet.$WorkerName"
+                User          = "$Wallet"
                 Pass          = "x"
                 Location      = $Location
                 SSL           = $true
