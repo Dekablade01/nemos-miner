@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io/api/osx,macos,batch,windows,powershell
 
+/Stats
+/Logs
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
