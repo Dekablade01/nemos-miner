@@ -1,3 +1,3 @@
-TIMEOUT /T 1800
+TIMEOUT /T 3600
 
 shutdown.exe /r /t 00
