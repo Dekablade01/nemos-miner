@@ -1,4 +1,3 @@
-start /min auto_restart.bat
 
 TIMEOUT /T 10
 start startahashpool.bat
