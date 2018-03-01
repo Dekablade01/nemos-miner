@@ -1,6 +1,4 @@
-
-TIMEOUT /T 10
-start startahashpool.bat
+start startzpool.bat
 TIMEOUT /T 2
 start nvmon.bat
 
